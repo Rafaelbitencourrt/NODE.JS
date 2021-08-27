@@ -4,7 +4,7 @@ const url = require("url");
 
 http
   .createServer((request, response) => {
-    let path = url.parse(request.url).pathname;
+    let path = reqUrl.pathname;
     if (path == " " || path == "/") {
       path = "/index.html";
     }
