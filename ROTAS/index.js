@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var bodyParser = require("body-parser");
+//var bodyParser = require("body-parser");
 
 let alunos = [
   {
@@ -28,4 +28,9 @@ app.get("/aluno", (req, res) => {
   res.json(aluno);
 });
 
+app.get("/aluno/id", (req, res) => {
+  console.log(req.params.id);
+  let aluno = alunos[req.params.id];
+  res.json(aluno);
+});
 app.listen(3000, () => console.log("Server rodando"));
